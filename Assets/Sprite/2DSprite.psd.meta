@@ -213,7 +213,7 @@ TextureImporter:
       213: -8600065364305587479
     second: 2DSprite_14
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -230,9 +230,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -241,9 +244,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -264,10 +267,15 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -279,6 +287,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -291,6 +300,20 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -1173,7 +1196,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 9e2dc63cd1e66a880800000000000000
-      internalID: -8600065364305587479
+      internalID: 8610965820510188393
       vertices: []
       indices: 
       edges: []
@@ -1482,9 +1505,65 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      2DSprite_0: 5831135775339059864
+      2DSprite_1: 7642939838334654745
+      2DSprite_10: -4692968089985330983
+      2DSprite_11: 5673314630304378277
+      2DSprite_12: -6540350280436304851
+      2DSprite_13: 304754854633260049
+      2DSprite_14: 8610965820510188393
+      2DSprite_18: -3194163427880825043
+      2DSprite_19: 5807895885291323009
+      2DSprite_2: 9087955246791791353
+      2DSprite_20: 8521471629635264166
+      2DSprite_23: -7519247337222771932
+      2DSprite_24: 2352053443920763093
+      2DSprite_25: 3323907989098881290
+      2DSprite_28: -3147907081896842735
+      2DSprite_29: 2021043961785685675
+      2DSprite_3: -5860987628964673425
+      2DSprite_30: 2794854682267443229
+      2DSprite_31: -5368919533683666822
+      2DSprite_32: -7603866559970662437
+      2DSprite_33: -5752005801199262508
+      2DSprite_34: -7442425340663794628
+      2DSprite_35: 3834081071845531786
+      2DSprite_36: 5416783298782819482
+      2DSprite_37: 139689457614791998
+      2DSprite_38: -5429788331203910898
+      2DSprite_39: -5672470670807703113
+      2DSprite_40: -2663290193409526376
+      2DSprite_41: -5337135828484356908
+      2DSprite_42: 7608927315813036532
+      2DSprite_43: -5494404568646460085
+      2DSprite_44: 1287863879686929593
+      2DSprite_45: -8640725173211507759
+      2DSprite_52: 5463793827481049245
+      2DSprite_53: 3774377577731247239
+      2DSprite_58: -6770503790770681278
+      2DSprite_59: -571856253711828784
+      2DSprite_64: 8784309493308962405
+      2DSprite_65: -4900614273024756406
+      2DSprite_7: 2378862746181731409
+      2DSprite_8: 707146654638357234
+      2DSprite_9: -5459740255115057259
+      BigHealthBar: 837829216475928927
+      BigHeart: -2045997845679518823
+      BossHead: 2960028191945622096
+      HealthBar: 5890555320539785694
+      Heart: -7796324569173339519
+      Inventory: -6929569947613342596
+      LineDown: 5179976603318725198
+      LineLeft: 5489907870877183230
+      LineRight: -5345657136485364692
+      LineUp: -7534230590998347683
+      Pistol: -7869171689029087048
+      Rifle: -7243139794050156679
+      Shotgun: -4102378380091280664
+      X: 2332600539555132520
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 
