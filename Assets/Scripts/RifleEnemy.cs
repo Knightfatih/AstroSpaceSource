@@ -2,18 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RifleEnemy : EnemyAI
+public class RifleEnemy : ShootingEnemy
 {
+    public Transform barrelEnd;
+
     protected override void InitializeEnemy()
     {
         speed = 1f;
         shootingRange = 20f;
-    }
-
-    protected override void ShootAtPlayer()
-    {
-        // Rifle shooting logic
-        //Debug.Log("Shooting at player with rifle");
+        shootingCooldown = 2f;
     }
 
 }
