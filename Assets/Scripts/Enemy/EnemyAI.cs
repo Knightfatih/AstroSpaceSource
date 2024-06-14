@@ -9,15 +9,16 @@ public enum EnemyType
     Rifle
 }
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(Health))]
 public abstract class EnemyAI : MonoBehaviour
 {
     public float speed;
     public float shootingRange;
     public Transform player;
     public LayerMask obstacleMask;
-
-    [SerializeField] private int health = 50;
-    [SerializeField] public int damageAmount = 10;
+    public int damageAmount = 10;
 
     // Patrol settings
     public List<Transform> patrolPoints;
@@ -27,11 +28,14 @@ public abstract class EnemyAI : MonoBehaviour
     protected Transform lastPatrolPoint;
 
     private Rigidbody2D rb2D;
+    private Health enemyHealth;
 
     protected virtual void Start()
     {
         InitializeEnemy();
+
         rb2D = GetComponent<Rigidbody2D>();
+        enemyHealth = GetComponent<Health>();
 
         if (rb2D != null)
         {
@@ -181,22 +185,12 @@ public abstract class EnemyAI : MonoBehaviour
         }
     }
 
-    public void DealDamage(int damageAmount)
-    {
-        health -= damageAmount;
-
-        if (health <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             rb2D.velocity = Vector2.zero;
-            StartDealingDamage(other.GetComponent<PlayerHealth>());
+            StartDealingDamage(other.GetComponent<Health>());
         }
     }
 
@@ -218,7 +212,7 @@ public abstract class EnemyAI : MonoBehaviour
 
     private Coroutine damageCoroutine;
 
-    private void StartDealingDamage(PlayerHealth playerHealth) //Stop Shooting
+    private void StartDealingDamage(Health playerHealth)
     {
         if (damageCoroutine == null && playerHealth != null)
         {
@@ -235,7 +229,7 @@ public abstract class EnemyAI : MonoBehaviour
         }
     }
 
-    private IEnumerator DealDamageOverTime(PlayerHealth playerHealth)
+    private IEnumerator DealDamageOverTime(Health playerHealth)
     {
         while (true)
         {

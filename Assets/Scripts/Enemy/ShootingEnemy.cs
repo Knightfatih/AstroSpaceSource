@@ -43,8 +43,8 @@ public abstract class ShootingEnemy : EnemyAI
         {
             if (hit.transform == player)
             {
-                Debug.Log(gameObject.name + " hit the player at " + Time.time);
-                PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+                //Debug.Log(gameObject.name + " hit the player at " + Time.time);
+                Health playerHealth = player.GetComponent<Health>();
                 if (playerHealth != null)
                 {
                     playerHealth.TakeDamage(damageAmount);
@@ -52,7 +52,7 @@ public abstract class ShootingEnemy : EnemyAI
             }
             else
             {
-                Debug.Log(gameObject.name + " shot blocked by " + hit.collider.name);
+                //Debug.Log(gameObject.name + " shot blocked by " + hit.collider.name);
             }
         }
     }

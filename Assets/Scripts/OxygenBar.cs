@@ -1,28 +1,25 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Timer : MonoBehaviour
+public class OxygenBar : MonoBehaviour
 {
     public Slider slider;
-
     public Gradient gradient;
     public Image fill;
 
-
-    public void SetMaxTime(int time)
+    public void SetMaxOxygen(float maxOxygen)
     {
-        slider.maxValue = time;
-        slider.value = time;
+        slider.maxValue = maxOxygen;
+        slider.value = maxOxygen;
 
         fill.color = gradient.Evaluate(1f);
     }
 
-    public void SetTime(int time)
+    public void SetOxygen(float oxygen)
     {
-        slider.value = time;
+        slider.value = oxygen;
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
-
 }
