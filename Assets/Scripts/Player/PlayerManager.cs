@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(PlayerInventory))]
-[RequireComponent(typeof(Health))]
+[RequireComponent(typeof(HealthManager))]
 [RequireComponent(typeof(Oxygen))]
 public class PlayerManager : MonoBehaviour
 {

@@ -9,6 +9,7 @@ public class Oxygen : MonoBehaviour
     public float currentOxygen;
     public float breathRate;
     public OxygenBar oxygenBar;
+    public GameObject lowOxygenWarning;
 
     private void Awake()
     {
@@ -17,6 +18,7 @@ public class Oxygen : MonoBehaviour
         UpdateOxygenBar();
         oxygenBar.SetMaxOxygen(maxOxygen);
         StartCoroutine(ConsumeOxygenContinuously());
+        lowOxygenWarning.SetActive(false);
     }
 
     public void ConsumeOxygen(float amount)
@@ -25,7 +27,7 @@ public class Oxygen : MonoBehaviour
         if (currentOxygen < 0)
         {
             currentOxygen = 0;
-            GetComponent<Health>().TakeDamage(GetComponent<Health>().maxHealth);
+            GetComponent<HealthManager>().TakeDamage(GetComponent<HealthManager>().maxHealth);
         }
 
         UpdateOxygenBar();
@@ -48,6 +50,21 @@ public class Oxygen : MonoBehaviour
         {
             oxygenBar.SetOxygen((int)currentOxygen);
         }
+        if (currentOxygen < 24)
+        {
+            if (!lowOxygenWarning.activeSelf)
+            {
+                StartCoroutine(FlashLowOxygenWarning());
+            }
+        }
+        else
+        {
+            if (lowOxygenWarning.activeSelf)
+            {
+                StopCoroutine(FlashLowOxygenWarning());
+                lowOxygenWarning.SetActive(false);
+            }
+        }
     }
 
     private IEnumerator ConsumeOxygenContinuously()
@@ -57,5 +74,15 @@ public class Oxygen : MonoBehaviour
             ConsumeOxygen(breathRate);
             yield return new WaitForSeconds(1f);
         }
+    }
+
+    private IEnumerator FlashLowOxygenWarning()
+    {
+        while (currentOxygen < 24)
+        {
+            lowOxygenWarning.SetActive(!lowOxygenWarning.activeSelf);
+            yield return new WaitForSeconds(0.25f);
+        }
+        lowOxygenWarning.SetActive(false);
     }
 }

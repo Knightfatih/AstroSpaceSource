@@ -20,7 +20,7 @@ public class Weapon
         if (hit.collider != null)
         {
             Debug.Log(hit.collider.name);
-            Health targetHealth = hit.collider.GetComponent<Health>();
+            HealthManager targetHealth = hit.collider.GetComponent<HealthManager>();
             if (targetHealth != null)
             {
                 targetHealth.TakeDamage(damage);

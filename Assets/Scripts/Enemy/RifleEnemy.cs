@@ -10,7 +10,7 @@ public class RifleEnemy : ShootingEnemy
     {
         speed = 1f;
         shootingRange = 20f;
-        shootingCooldown = 2f;
+        shootingCooldown = 1f;
     }
 
 }

@@ -40,7 +40,7 @@ public class ShotgunEnemy : ShootingEnemy
             if (hit.transform == player)
             {
                 Debug.Log(gameObject.name + " hit the player with a shotgun bullet at " + Time.time);
-                Health playerHealth = player.GetComponent<Health>();
+                HealthManager playerHealth = player.GetComponent<HealthManager>();
                 if (playerHealth != null)
                 {
                     playerHealth.TakeDamage(damageAmount);

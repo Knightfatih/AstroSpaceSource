@@ -11,10 +11,12 @@ public enum EnemyType
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
-[RequireComponent(typeof(Health))]
+[RequireComponent(typeof(HealthManager))]
 public abstract class EnemyAI : MonoBehaviour
 {
     public float speed;
+    public float patrollingSpeed;
+    public float chasingSpeed;
     public float shootingRange;
     public Transform player;
     public LayerMask obstacleMask;
@@ -28,14 +30,14 @@ public abstract class EnemyAI : MonoBehaviour
     protected Transform lastPatrolPoint;
 
     private Rigidbody2D rb2D;
-    private Health enemyHealth;
+    private HealthManager enemyHealth;
 
     protected virtual void Start()
     {
         InitializeEnemy();
 
         rb2D = GetComponent<Rigidbody2D>();
-        enemyHealth = GetComponent<Health>();
+        enemyHealth = GetComponent<HealthManager>();
 
         if (rb2D != null)
         {
@@ -64,6 +66,7 @@ public abstract class EnemyAI : MonoBehaviour
             isPatrolling = false;
             RotateTowardsPlayer();
             StopPatrolling();
+            speed = chasingSpeed;
 
             if (this is UnarmedEnemy)
             {
@@ -78,6 +81,7 @@ public abstract class EnemyAI : MonoBehaviour
             }
             else
             {
+                speed = patrollingSpeed;
                 Patrol();
             }
         }
@@ -190,7 +194,7 @@ public abstract class EnemyAI : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             rb2D.velocity = Vector2.zero;
-            StartDealingDamage(other.GetComponent<Health>());
+            StartDealingDamage(other.GetComponent<HealthManager>());
         }
     }
 
@@ -212,7 +216,7 @@ public abstract class EnemyAI : MonoBehaviour
 
     private Coroutine damageCoroutine;
 
-    private void StartDealingDamage(Health playerHealth)
+    private void StartDealingDamage(HealthManager playerHealth)
     {
         if (damageCoroutine == null && playerHealth != null)
         {
@@ -229,7 +233,7 @@ public abstract class EnemyAI : MonoBehaviour
         }
     }
 
-    private IEnumerator DealDamageOverTime(Health playerHealth)
+    private IEnumerator DealDamageOverTime(HealthManager playerHealth)
     {
         while (true)
         {

@@ -44,7 +44,7 @@ public abstract class ShootingEnemy : EnemyAI
             if (hit.transform == player)
             {
                 //Debug.Log(gameObject.name + " hit the player at " + Time.time);
-                Health playerHealth = player.GetComponent<Health>();
+                HealthManager playerHealth = player.GetComponent<HealthManager>();
                 if (playerHealth != null)
                 {
                     playerHealth.TakeDamage(damageAmount);

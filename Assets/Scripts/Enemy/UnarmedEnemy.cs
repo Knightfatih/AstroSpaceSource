@@ -4,6 +4,7 @@ public class UnarmedEnemy : EnemyAI
 {
     protected override void InitializeEnemy()
     {
-        speed = 3f;
+        patrollingSpeed = 3f;
+        chasingSpeed = 5f;
     }
 }
