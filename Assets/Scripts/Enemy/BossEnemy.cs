@@ -2,29 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossEnemy : EnemyAI
+public class BossEnemy : ShootingEnemy
 {
-    public GameObject bossUI;
-    public float bossHealth = 1000f;
+    public Transform barrelEnd;
 
     protected override void InitializeEnemy()
     {
-        // Additional boss-specific logic
+        speed = 1f;
+        shootingRange = 20f;
+        shootingCooldown = 1f;
     }
 
-    public void TakeDamage(float amount)
-    {
-        bossHealth -= amount;
-        if (bossHealth <= 0)
-        {
-            Die();
-        }
-    }
-
-    void Die()
-    {
-        bossUI.SetActive(true);
-        Destroy(gameObject);
-        //Change it to dead model
-    }
 }
