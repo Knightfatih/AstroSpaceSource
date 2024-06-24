@@ -36,6 +36,11 @@ public class PlayerManager : MonoBehaviour
         oxygen = GetComponent<Oxygen>();
     }
 
+    private void Start()
+    {
+        playerInventory.playerSpriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
     private void Update()
     {
         ProcessInputs();
@@ -44,6 +49,16 @@ public class PlayerManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             playerInventory.UseCurrentWeapon();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            playerInventory.SwitchWeapon();
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            playerInventory.ReloadCurrentWeapon();
         }
 
         if (Input.GetKey(KeyCode.LeftShift))
