@@ -21,26 +21,9 @@ public class PlayerInventory : MonoBehaviour
     public TMP_Text ammoText;
     public TMP_Text magazineText;
 
-    public void AddWeapon(Weapon weapon)
-    {
-        weapons.Add(weapon);
-    }
-
     private void Start()
     {
-        weapons.Add(new Weapon
-        {
-            weaponType = WeaponType.Pistol,
-            name = "Pistol",
-            damage = 10,
-            range = 15f,
-            hitLayers = LayerMask.GetMask("Default", "Wall", "Enemy"),
-            firePoint = firePoint,
-            ammo = 15,
-            maxAmmo = 15,
-            magazineCount = 3,
-            maxMagazines = 5
-        });
+        AddWeapon(WeaponType.Pistol);
 
         UpdateWeaponVisuals();
         UpdateAmmoUI();
@@ -48,42 +31,11 @@ public class PlayerInventory : MonoBehaviour
 
     public void AddWeapon(WeaponType weaponType)
     {
-        switch (weaponType)
-        {
-            case WeaponType.Shotgun:
-                weapons.Add(new Weapon
-                {
-                    weaponType = WeaponType.Shotgun,
-                    name = "Shotgun",
-                    damage = 20,
-                    range = 7f,
-                    hitLayers = LayerMask.GetMask("Default", "Wall", "Enemy"),
-                    firePoint = firePoint,
-                    ammo = 8,
-                    maxAmmo = 8,
-                    magazineCount = 2,
-                    maxMagazines = 3
-                });
-                break;
-            case WeaponType.Rifle:
-                weapons.Add(new Weapon
-                {
-                    weaponType = WeaponType.Rifle,
-                    name = "Rifle",
-                    damage = 15,
-                    range = 15f,
-                    hitLayers = LayerMask.GetMask("Default", "Wall", "Enemy"),
-                    firePoint = firePoint,
-                    ammo = 30,
-                    maxAmmo = 30,
-                    magazineCount = 4,
-                    maxMagazines = 5
-                });
-                break;
-        }
-        Debug.Log(weaponType + " added to inventory.");
-        UpdateWeaponVisuals();
-        UpdateAmmoUI();
+        Weapon newWeapon = new Weapon(weaponType, firePoint);
+        weapons.Add(newWeapon);
+        Debug.Log(newWeapon.name + " added to inventory.");
+        UpdateWeaponVisuals(); // Update sprite and UI when a new weapon is added
+        UpdateAmmoUI(); // Update ammo and magazine UI when a new weapon is added
     }
 
     public void UseCurrentWeapon()
@@ -135,8 +87,8 @@ public class PlayerInventory : MonoBehaviour
         if (weapons.Count > 0)
         {
             Weapon currentWeapon = weapons[currentWeaponIndex];
-            ammoText.text = "Ammo: " + currentWeapon.ammo + " / " + currentWeapon.maxAmmo;
-            magazineText.text = "Magazines: " + currentWeapon.magazineCount;
+            ammoText.text = "Ammo: " + currentWeapon.ammo + " / " + currentWeapon.features.maxAmmo;
+            magazineText.text = "Magazines: " + currentWeapon.features.magazineCount;
         }
     }
 

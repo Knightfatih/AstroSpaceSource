@@ -32,28 +32,5 @@ public abstract class ShootingEnemy : EnemyAI
         }
     }
 
-    protected override void ShootAtPlayer()
-    {
-        Vector2 directionToPlayer = (player.position - transform.position).normalized;
-
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, directionToPlayer, shootingRange, obstacleMask);
-        Debug.DrawRay(transform.position, directionToPlayer * shootingRange, Color.cyan, 1f);
-
-        if (hit.collider != null)
-        {
-            if (hit.transform == player)
-            {
-                //Debug.Log(gameObject.name + " hit the player at " + Time.time);
-                HealthManager playerHealth = player.GetComponent<HealthManager>();
-                if (playerHealth != null)
-                {
-                    playerHealth.TakeDamage(damageAmount);
-                }
-            }
-            else
-            {
-                //Debug.Log(gameObject.name + " shot blocked by " + hit.collider.name);
-            }
-        }
-    }
+    protected abstract void ShootAtPlayer();
 }

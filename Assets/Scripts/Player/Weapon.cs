@@ -7,14 +7,61 @@ public class Weapon
 {
     public WeaponType weaponType;
     public string name;
-    public int damage;
-    public float range;
-    public LayerMask hitLayers;
-    public Transform firePoint;
+    public Transform barrelEnd;
     public int ammo;
-    public int maxAmmo;
-    public int magazineCount;
-    public int maxMagazines;
+    public WeaponFeatures features;
+    public float spreadAngle = 15f;
+
+    public Weapon(WeaponType weaponType, Transform barrelEnd)
+    {
+        this.weaponType = weaponType;
+        this.barrelEnd = barrelEnd;
+        InitializeWeapon();
+    }
+
+    private void InitializeWeapon()
+    {
+        switch (weaponType)
+        {
+            case WeaponType.Pistol:
+                name = "Pistol";
+                features = new WeaponFeatures
+                {
+                    damage = 10,
+                    range = 10f,
+                    maxAmmo = 15,
+                    magazineCount = 3,
+                    maxMagazines = 5,
+                    reloadTime = 1.5f
+                };
+                break;
+            case WeaponType.Shotgun:
+                name = "Shotgun";
+                features = new WeaponFeatures
+                {
+                    damage = 20,
+                    range = 7f,
+                    maxAmmo = 8,
+                    magazineCount = 2,
+                    maxMagazines = 3,
+                    reloadTime = 2.0f
+                };
+                break;
+            case WeaponType.Rifle:
+                name = "Rifle";
+                features = new WeaponFeatures
+                {
+                    damage = 15,
+                    range = 15f,
+                    maxAmmo = 30,
+                    magazineCount = 4,
+                    maxMagazines = 5,
+                    reloadTime = 2.5f
+                };
+                break;
+        }
+        ammo = features.maxAmmo;
+    }
 
     public void Shoot()
     {
@@ -22,17 +69,13 @@ public class Weapon
         {
             ammo--;
 
-            Vector2 direction = (firePoint.position - firePoint.parent.position).normalized;
-            RaycastHit2D hit = Physics2D.Raycast(firePoint.position, direction, range, hitLayers);
-            Debug.DrawRay(firePoint.position, direction * range, Color.red, 1f);
-
-            if (hit.collider != null)
+            if (weaponType == WeaponType.Shotgun)
             {
-                HealthManager targetHealth = hit.collider.GetComponent<HealthManager>();
-                if (targetHealth != null)
-                {
-                    targetHealth.TakeDamage(damage);
-                }
+                ShootShotgun();
+            }
+            else
+            {
+                ShootBullet(barrelEnd.up);
             }
 
             if (ammo == 0)
@@ -46,13 +89,44 @@ public class Weapon
         }
     }
 
+    private void ShootBullet(Vector2 direction)
+    {
+        Vector2 rayOrigin = barrelEnd.position;
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, direction, features.range, LayerMask.GetMask("Default", "Wall", "Player", "Enemy"));
+        Debug.DrawRay(rayOrigin, direction * features.range, Color.red, 1f);
+
+        if (hit.collider != null)
+        {
+            HealthManager targetHealth = hit.collider.GetComponent<HealthManager>();
+            if (targetHealth != null)
+            {
+                targetHealth.TakeDamage(features.damage);
+            }
+        }
+    }
+
+    private void ShootShotgun()
+    {
+        Vector2 directionToPlayer = barrelEnd.up;
+
+        // Calculate the spread directions
+        Vector2 direction1 = Quaternion.Euler(0, 0, -spreadAngle) * directionToPlayer;
+        Vector2 direction2 = directionToPlayer;
+        Vector2 direction3 = Quaternion.Euler(0, 0, spreadAngle) * directionToPlayer;
+
+        // Shoot three bullets
+        ShootBullet(direction1);
+        ShootBullet(direction2);
+        ShootBullet(direction3);
+    }
+
     public void Reload()
     {
-        if (magazineCount > 0)
+        if (features.magazineCount > 0)
         {
-            magazineCount--;
-            ammo = maxAmmo;
-            Debug.Log(name + " reloaded. Magazines left: " + magazineCount);
+            features.magazineCount--;
+            ammo = features.maxAmmo;
+            Debug.Log(name + " reloaded. Magazines left: " + features.magazineCount);
         }
         else
         {
@@ -62,7 +136,7 @@ public class Weapon
 
     private void AutoReload()
     {
-        if (magazineCount > 0)
+        if (features.magazineCount > 0)
         {
             Reload();
         }
@@ -70,10 +144,10 @@ public class Weapon
 
     public void PickUpMagazine()
     {
-        if (magazineCount < maxMagazines)
+        if (features.magazineCount < features.maxMagazines)
         {
-            magazineCount++;
-            Debug.Log("Picked up a magazine. Magazines now: " + magazineCount);
+            features.magazineCount++;
+            Debug.Log("Picked up a magazine. Magazines now: " + features.magazineCount);
         }
     }
 }
