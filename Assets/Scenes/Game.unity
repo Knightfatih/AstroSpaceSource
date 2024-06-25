@@ -14599,19 +14599,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &5463124845160721826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6289452677950182577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93ab9fe9f4897dc439178a13c7fe9a2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponType: 0
 --- !u!1 &5463793318602152913
 GameObject:
   m_ObjectHideFlags: 0
@@ -15418,7 +15405,6 @@ GameObject:
   - component: {fileID: 649390001451312572}
   - component: {fileID: 651513238838099954}
   - component: {fileID: 856640605331615757}
-  - component: {fileID: 5463124845160721826}
   - component: {fileID: 7925195664650330021}
   m_Layer: 9
   m_Name: Pistol
@@ -15955,7 +15941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons: []
   currentWeaponIndex: 0
-  firePoint: {fileID: 959754180}
+  barrelEnd: {fileID: 959754180}
   playerSpriteRenderer: {fileID: 0}
   spritePistol: {fileID: 5530595281158056633, guid: dc17de20c6dff2a4eb2ef24fb8b35b0a,
     type: 3}

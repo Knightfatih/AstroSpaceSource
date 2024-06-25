@@ -7,7 +7,7 @@ public class PlayerInventory : MonoBehaviour
 {
     public List<Weapon> weapons = new List<Weapon>();
     public int currentWeaponIndex = 0;
-    public Transform firePoint;
+    public Transform barrelEnd;
     public SpriteRenderer playerSpriteRenderer;
 
     public Sprite spritePistol;
@@ -29,13 +29,36 @@ public class PlayerInventory : MonoBehaviour
         UpdateAmmoUI();
     }
 
+    private bool HasWeapon(WeaponType weaponType, out Weapon weapon)
+    {
+        foreach (Weapon w in weapons)
+        {
+            if (w.weaponType == weaponType)
+            {
+                weapon = w;
+                return true;
+            }
+        }
+        weapon = null;
+        return false;
+    }
+
     public void AddWeapon(WeaponType weaponType)
     {
-        Weapon newWeapon = new Weapon(weaponType, firePoint);
-        weapons.Add(newWeapon);
-        Debug.Log(newWeapon.name + " added to inventory.");
-        UpdateWeaponVisuals(); // Update sprite and UI when a new weapon is added
-        UpdateAmmoUI(); // Update ammo and magazine UI when a new weapon is added
+        if (!HasWeapon(weaponType, out Weapon existingWeapon))
+        {
+            Weapon newWeapon = new Weapon(weaponType, barrelEnd);
+            weapons.Add(newWeapon);
+            Debug.Log(newWeapon.name + " added to inventory.");
+            UpdateWeaponVisuals();
+            UpdateAmmoUI();
+        }
+        else
+        {
+            existingWeapon.PickUpMagazine(2);
+            UpdateAmmoUI();
+            Debug.Log("Added magazine to existing " + weaponType);
+        }
     }
 
     public void UseCurrentWeapon()
@@ -101,13 +124,13 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    public void PickUpMagazine(WeaponType weaponType)
+    public void PickUpMagazine(WeaponType weaponType, int magazineCount)
     {
         foreach (Weapon weapon in weapons)
         {
             if (weapon.weaponType == weaponType)
             {
-                weapon.PickUpMagazine();
+                weapon.PickUpMagazine(magazineCount);
                 UpdateAmmoUI();
                 return;
             }

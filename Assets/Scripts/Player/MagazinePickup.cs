@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MagazinePickup : MonoBehaviour
 {
-    public WeaponType weaponType; // Type of weapon this magazine is for
+    public WeaponType weaponType;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -13,7 +13,7 @@ public class MagazinePickup : MonoBehaviour
             PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
             if (playerInventory != null)
             {
-                playerInventory.PickUpMagazine(weaponType);
+                playerInventory.PickUpMagazine(weaponType, 2);
                 Destroy(gameObject);
             }
         }

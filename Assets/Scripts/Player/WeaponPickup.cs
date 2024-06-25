@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponPickup : MonoBehaviour
 {
-    public WeaponType weaponType; // Type of weapon to pick up
+    public WeaponType weaponType;
 
     private void OnTriggerEnter2D(Collider2D other)
     {

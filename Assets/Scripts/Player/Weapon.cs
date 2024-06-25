@@ -12,6 +12,7 @@ public class Weapon
     public WeaponFeatures features;
     public float spreadAngle = 15f;
 
+
     public Weapon(WeaponType weaponType, Transform barrelEnd)
     {
         this.weaponType = weaponType;
@@ -142,12 +143,9 @@ public class Weapon
         }
     }
 
-    public void PickUpMagazine()
+    public void PickUpMagazine(int count)
     {
-        if (features.magazineCount < features.maxMagazines)
-        {
-            features.magazineCount++;
-            Debug.Log("Picked up a magazine. Magazines now: " + features.magazineCount);
-        }
+        features.magazineCount = Mathf.Min(features.magazineCount + count, features.maxMagazines);
+        Debug.Log("Picked up " + count + " magazine(s). Magazines now: " + features.magazineCount);
     }
 }
