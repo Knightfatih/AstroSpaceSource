@@ -17,18 +17,14 @@ public class RoomTemplates : MonoBehaviour
     private bool spawnedBoss;
     public GameObject boss;
 
-
     private void Update()
     {
         if (waitTime <= 0 && !spawnedBoss)
         {
-            for(int i = 0; i < rooms.Count; i++)
+            if (rooms.Count > 0)
             {
-                if(i == rooms.Count - 1)
-                {
-                    Instantiate(boss, rooms[i].transform.position, Quaternion.identity);
-                    spawnedBoss = true;
-                }
+                Instantiate(boss, rooms[rooms.Count - 1].transform.position, Quaternion.identity);
+                spawnedBoss = true;
             }
         }
         else
