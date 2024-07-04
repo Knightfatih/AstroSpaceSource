@@ -6,9 +6,6 @@ public class BossEnemy : ShootingEnemy
 {
     public Transform barrelEnd;
     private Weapon weapon;
-    private bool isDodging = false;
-    private float dodgeCooldown = 2f;
-    private float dodgeCooldownTimer = 0f;
 
     public Sprite spriteRifle;
     public Sprite spriteShotgun;
@@ -17,10 +14,9 @@ public class BossEnemy : ShootingEnemy
 
     protected override void InitializeEnemy()
     {
-        speed = 1f;
-        patrollingSpeed = 0.5f;
+        patrollingSpeed = 1.5f;
         chasingSpeed = 1.5f;
-        shootingRange = 15f;
+        shootingRange = 5f;
         shootingCooldown = 2f;
 
         weapon = new Weapon(WeaponType.Rifle, barrelEnd);
@@ -33,12 +29,7 @@ public class BossEnemy : ShootingEnemy
     {
         base.Update();
 
-        if (!isDodging)
-        {
-            HandleWeaponSwitching();
-        }
-
-        HandleDodgeCooldown();
+        HandleWeaponSwitching();
     }
 
     protected override void ShootAtPlayer()
@@ -48,45 +39,19 @@ public class BossEnemy : ShootingEnemy
 
     private void HandleWeaponSwitching()
     {
-        if (enemyHealth.currentHealth < enemyHealth.maxHealth * 0.5f && weapon.weaponType != WeaponType.Shotgun)
+        if (enemyHealth.currentHealth < enemyHealth.maxHealth * 0.5f && weapon.weaponType == WeaponType.Rifle)
         {
             weapon = new Weapon(WeaponType.Shotgun, barrelEnd);
             shootingCooldown = 3f;
             spriteRenderer.sprite = spriteShotgun;
+            enemyHealth.Heal(enemyHealth.maxHealth);
         }
-        if (enemyHealth.currentHealth < enemyHealth.maxHealth * 0.25f && weapon.weaponType != WeaponType.Pistol)
+        else if (enemyHealth.currentHealth < enemyHealth.maxHealth * 0.25f && weapon.weaponType == WeaponType.Shotgun)
         {
             weapon = new Weapon(WeaponType.Pistol, barrelEnd);
             shootingCooldown = 1.5f;
             spriteRenderer.sprite = spritePistol;
-            StartDodging();
-        }
-    }
-
-    private void StartDodging()
-    {
-        if (!isDodging)
-        {
-            StartCoroutine(Dodge());
-        }
-    }
-
-    private IEnumerator Dodge()
-    {
-        isDodging = true;
-        Vector2 dodgeDirection = Random.insideUnitCircle.normalized * speed * 2;
-        rb2D.velocity = dodgeDirection;
-        yield return new WaitForSeconds(0.5f);
-        rb2D.velocity = Vector2.zero;
-        isDodging = false;
-        dodgeCooldownTimer = dodgeCooldown;
-    }
-
-    private void HandleDodgeCooldown()
-    {
-        if (dodgeCooldownTimer > 0)
-        {
-            dodgeCooldownTimer -= Time.deltaTime;
+            enemyHealth.Heal(enemyHealth.maxHealth);
         }
     }
 }
