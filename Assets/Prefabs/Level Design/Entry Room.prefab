@@ -5675,7 +5675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c25e0c2437378f74c8b6bf0754329fc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openingDireciton: 1
+  openingDirection: 1
   spawned: 0
   waitTime: 4
 --- !u!61 &8067573262903555460
@@ -6058,7 +6058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c25e0c2437378f74c8b6bf0754329fc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openingDireciton: 3
+  openingDirection: 3
   spawned: 0
   waitTime: 4
 --- !u!61 &8067573263092856084
@@ -7811,7 +7811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c25e0c2437378f74c8b6bf0754329fc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openingDireciton: 2
+  openingDirection: 2
   spawned: 0
   waitTime: 4
 --- !u!61 &8067573264100730494
@@ -8325,7 +8325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c25e0c2437378f74c8b6bf0754329fc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openingDireciton: 4
+  openingDirection: 4
   spawned: 0
   waitTime: 4
 --- !u!61 &8067573264204047531
