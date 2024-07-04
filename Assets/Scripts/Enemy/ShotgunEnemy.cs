@@ -10,7 +10,7 @@ public class ShotgunEnemy : ShootingEnemy
     protected override void InitializeEnemy()
     {
         speed = 1.2f;
-        shootingRange = 10f;
+        shootingRange = 5f;
         shootingCooldown = 3f;
 
         shotgun = new Weapon(WeaponType.Shotgun, barrelEnd);

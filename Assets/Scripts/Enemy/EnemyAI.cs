@@ -22,8 +22,8 @@ public abstract class EnemyAI : MonoBehaviour
     protected bool playerInSight = false;
     protected Transform lastPatrolPoint;
 
-    private Rigidbody2D rb2D;
-    private HealthManager enemyHealth;
+    protected Rigidbody2D rb2D;
+    protected HealthManager enemyHealth;
 
     protected virtual void Start()
     {
