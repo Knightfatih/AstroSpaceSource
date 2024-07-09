@@ -3795,7 +3795,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc7527f891f77d349ae98a71924226aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 82881408}
+  _pauseMenuUI: {fileID: 0}
+  _mainMenuSceneName: Main Menu
 --- !u!114 &690517408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7010,7 +7011,7 @@ MonoBehaviour:
     type: 3}
   rooms: []
   waitTime: 5
-  boss: {fileID: 6592692492735346834, guid: a4ac3ea102654cb49ae2a6f660d4a4cf, type: 3}
+  boss: {fileID: 8471615936431888655, guid: e46662b6da6cf6f46adb98ae525f58fd, type: 3}
 --- !u!4 &1399930050
 Transform:
   m_ObjectHideFlags: 0
