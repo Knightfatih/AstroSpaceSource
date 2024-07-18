@@ -12,12 +12,14 @@ public class Weapon
     public WeaponFeatures features;
     public float spreadAngle = 15f;
 
+    public LayerMask wallLayerMask;
 
     public Weapon(WeaponType weaponType, Transform barrelEnd)
     {
         this.weaponType = weaponType;
         this.barrelEnd = barrelEnd;
         InitializeWeapon();
+        wallLayerMask = LayerMask.GetMask("Wall");
     }
 
     private void InitializeWeapon()
@@ -93,15 +95,21 @@ public class Weapon
     private void ShootBullet(Vector2 direction)
     {
         Vector2 rayOrigin = barrelEnd.position;
-        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, direction, features.range, LayerMask.GetMask("Default", "Wall", "Player", "Enemy"));
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, direction, features.range, wallLayerMask | LayerMask.GetMask("Default", "Player", "Enemy"));
         Debug.DrawRay(rayOrigin, direction * features.range, Color.red, 1f);
 
         if (hit.collider != null)
         {
             HealthManager targetHealth = hit.collider.GetComponent<HealthManager>();
+            WallHealth wallHealth = hit.collider.GetComponent<WallHealth>();
+
             if (targetHealth != null)
             {
                 targetHealth.TakeDamage(features.damage);
+            }
+            else if (wallHealth != null)
+            {
+                wallHealth.TakeDamage(features.damage);
             }
         }
     }
