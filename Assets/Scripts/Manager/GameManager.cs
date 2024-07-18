@@ -6,6 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public GameObject[] spawnPoints;
+    public GameObject[] prefabsToSpawn;
+
     void Awake()
     {
         if (instance == null)
@@ -18,4 +21,29 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    void Update()
+    {
+        if (RoomTemplates.instance != null && RoomTemplates.instance.Spawning)
+        {
+            SpawnPickUps();
+            RoomTemplates.instance.Spawning = false;
+        }
+    }
+
+    public void SpawnPrefabAtPoint(GameObject prefab, Vector3 position)
+    {
+        Instantiate(prefab, position, Quaternion.identity);
+    }
+
+    private void SpawnPickUps()
+    {
+        GameObject[] pickUpPoints = GameObject.FindGameObjectsWithTag("PickUps");
+
+        foreach (GameObject point in pickUpPoints)
+        {
+            SpawnPrefabAtPoint(prefabsToSpawn[Random.Range(0, prefabsToSpawn.Length)], point.transform.position);
+        }
+    }
+
 }

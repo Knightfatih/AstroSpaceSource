@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RoomTemplates : MonoBehaviour
 {
+    public static RoomTemplates instance;
+
     public GameObject[] bottomRooms;
     public GameObject[] topRooms;
     public GameObject[] leftRooms;
@@ -13,9 +15,29 @@ public class RoomTemplates : MonoBehaviour
 
     public List<GameObject> rooms;
 
-    public float waitTime;
+    public float waitTime = 0.5f;
     private bool spawnedBoss;
     public GameObject boss;
+
+    private bool _spawning = false;
+
+    public bool Spawning
+    {
+        get { return _spawning; }
+        set { _spawning = value; }
+    }
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Update()
     {
@@ -25,6 +47,7 @@ public class RoomTemplates : MonoBehaviour
             {
                 Instantiate(boss, rooms[rooms.Count - 1].transform.position, Quaternion.identity);
                 spawnedBoss = true;
+                Spawning = true;
             }
         }
         else
