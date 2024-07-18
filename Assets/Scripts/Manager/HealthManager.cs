@@ -60,4 +60,14 @@ public class HealthManager : MonoBehaviour
 
         Destroy(gameObject);
     }
+
+    public void SetHealth(int health)
+    {
+        currentHealth = Mathf.Clamp(health, 0, maxHealth);
+    }
+
+    //public int GetCurrentHealth()
+    //{
+    //    return currentHealth;
+    //}
 }

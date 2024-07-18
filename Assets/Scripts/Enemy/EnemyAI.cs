@@ -13,7 +13,12 @@ public abstract class EnemyAI : MonoBehaviour
     public float shootingRange;
     public Transform player;
     public LayerMask obstacleMask;
-    public int damageAmount = 10;
+   // public int damageAmount = 10;
+
+    public int baseHealth = 100;
+    public int baseDamage = 10;
+    private int adjustedHealth;
+    private int adjustedDamage;
 
     // Patrol settings
     public List<Transform> patrolPoints;
@@ -31,6 +36,10 @@ public abstract class EnemyAI : MonoBehaviour
 
         rb2D = GetComponent<Rigidbody2D>();
         enemyHealth = GetComponent<HealthManager>();
+
+        AdjustAttributesBasedOnDifficulty();
+
+        enemyHealth.SetHealth(adjustedHealth);
 
         if (rb2D != null)
         {
@@ -71,6 +80,9 @@ public abstract class EnemyAI : MonoBehaviour
             if (!isPatrolling)
             {
                 MoveTowardsLastPatrolPoint();
+
+                //closestWaypoint = FindClosestWaypoint();
+                //MoveTowardsClosestWaypoint();
             }
             else
             {
@@ -168,6 +180,40 @@ public abstract class EnemyAI : MonoBehaviour
         }
     }
 
+    //private Transform FindClosestWaypoint()
+    //{
+    //    Transform closestWaypoint = null;
+    //    float closestDistance = Mathf.Infinity;
+
+    //    foreach (Transform waypoint in patrolPoints)
+    //    {
+    //        float distance = Vector3.Distance(transform.position, waypoint.position);
+    //        if (distance < closestDistance)
+    //        {
+    //            closestDistance = distance;
+    //            closestWaypoint = waypoint;
+    //        }
+    //    }
+
+    //    return closestWaypoint;
+    //}
+
+    //protected void MoveTowardsClosestWaypoint()
+    //{
+    //    if (closestWaypoint == null) return;
+
+    //    RotateTowardsWaypoint(closestWaypoint.position);
+    //    Vector2 direction = (closestWaypoint.position - transform.position).normalized;
+    //    rb2D.velocity = direction * speed;
+
+    //    if (Vector3.Distance(transform.position, closestWaypoint.position) < 0.1f)
+    //    {
+    //        isPatrolling = true;
+    //        currentPatrolIndex = patrolPoints.IndexOf(closestWaypoint);
+    //        closestWaypoint = null;
+    //    }
+    //}
+
     protected void StopPatrolling()
     {
         rb2D.velocity = Vector2.zero;
@@ -231,9 +277,18 @@ public abstract class EnemyAI : MonoBehaviour
         {
             if (playerHealth != null)
             {
-                playerHealth.TakeDamage(damageAmount);
+                playerHealth.TakeDamage(adjustedDamage);
             }
             yield return new WaitForSeconds(0.5f);
         }
+    }
+
+    private void AdjustAttributesBasedOnDifficulty()
+    {
+        float healthMultiplier = DifficultyManager.Instance.GetHealthMultiplier();
+        float damageMultiplier = DifficultyManager.Instance.GetDamageMultiplier();
+
+        adjustedHealth = Mathf.RoundToInt(baseHealth * healthMultiplier);
+        adjustedDamage = Mathf.RoundToInt(baseDamage * damageMultiplier);
     }
 }
