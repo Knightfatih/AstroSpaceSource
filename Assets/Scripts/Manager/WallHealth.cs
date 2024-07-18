@@ -37,6 +37,5 @@ public class WallHealth : MonoBehaviour
     {
         int spriteIndex = Mathf.FloorToInt((1 - (float)currentHealth / maxHealth) * (damageSprites.Length - 1));
         spriteRenderer.sprite = damageSprites[spriteIndex];
-        boxCollider2D.enabled = false;
     }
 }

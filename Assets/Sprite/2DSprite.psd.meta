@@ -1483,7 +1483,7 @@ TextureImporter:
         width: 38
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1491,6 +1491,90 @@ TextureImporter:
       bones: []
       spriteID: 0528f0a25f1241920800000000000000
       internalID: 2960028191945622096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSprite_5
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1713
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6f7586aed6ef9f44a7e480a7f92a297
+      internalID: -2036470165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSprite_4
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 1713
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f43812ddafd9d94cabe207cebeae06e
+      internalID: -1078114833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSprite_6
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 1668
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 877c85ac69b5ba04ea48b16295282a42
+      internalID: 1337232353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSprite_15
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1668
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d7b8d22b1c1e8540a7b7ce9dce259c3
+      internalID: -1499050086
       vertices: []
       indices: 
       edges: []
@@ -1513,6 +1597,8 @@ TextureImporter:
       2DSprite_12: -6540350280436304851
       2DSprite_13: 304754854633260049
       2DSprite_14: 8610965820510188393
+      2DSprite_15: -1499050086
+      2DSprite_16: 1847856253
       2DSprite_18: -3194163427880825043
       2DSprite_19: 5807895885291323009
       2DSprite_2: 9087955246791791353
@@ -1533,16 +1619,19 @@ TextureImporter:
       2DSprite_37: 139689457614791998
       2DSprite_38: -5429788331203910898
       2DSprite_39: -5672470670807703113
+      2DSprite_4: -1078114833
       2DSprite_40: -2663290193409526376
       2DSprite_41: -5337135828484356908
       2DSprite_42: 7608927315813036532
       2DSprite_43: -5494404568646460085
       2DSprite_44: 1287863879686929593
       2DSprite_45: -8640725173211507759
+      2DSprite_5: -2036470165
       2DSprite_52: 5463793827481049245
       2DSprite_53: 3774377577731247239
       2DSprite_58: -6770503790770681278
       2DSprite_59: -571856253711828784
+      2DSprite_6: 1337232353
       2DSprite_64: 8784309493308962405
       2DSprite_65: -4900614273024756406
       2DSprite_7: 2378862746181731409
