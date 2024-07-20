@@ -15,16 +15,29 @@ public class DifficultyManager : MonoBehaviour
 
     public DifficultyLevel currentDifficulty = DifficultyLevel.Normal;
 
-    public float GetHealthMultiplier()
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
+    public int GetMaxHealth()
     {
         switch (currentDifficulty)
         {
             case DifficultyLevel.Easy:
-                return 0.5f;
+                return 100;
             case DifficultyLevel.Hard:
-                return 2f;
+                return 300;
             default:
-                return 1f;
+                return 200;
         }
     }
 
@@ -33,11 +46,11 @@ public class DifficultyManager : MonoBehaviour
         switch (currentDifficulty)
         {
             case DifficultyLevel.Easy:
-                return 0.5f;
+                return 10;
             case DifficultyLevel.Hard:
-                return 2f;
+                return 30;
             default:
-                return 1f;
+                return 20;
         }
     }
 

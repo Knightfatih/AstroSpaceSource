@@ -10,10 +10,21 @@ public class HealthManager : MonoBehaviour
 
     private void Awake()
     {
+        maxHealth = DifficultyManager.Instance.GetMaxHealth();
         currentHealth = maxHealth;
+
         if (healthBar != null)
         {
             healthBar.SetMaxHealth(maxHealth);
+            UpdateHealthBar();
+        }
+    }
+
+    private void Start()
+    {
+        if (currentHealth == 0)
+        {
+            currentHealth = maxHealth;
             UpdateHealthBar();
         }
     }
@@ -57,17 +68,6 @@ public class HealthManager : MonoBehaviour
     private void Die()
     {
         Debug.Log(gameObject.name + " died.");
-
         Destroy(gameObject);
     }
-
-    public void SetHealth(int health)
-    {
-        currentHealth = Mathf.Clamp(health, 0, maxHealth);
-    }
-
-    //public int GetCurrentHealth()
-    //{
-    //    return currentHealth;
-    //}
 }

@@ -1213,7 +1213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06ada743856e5af4e9f9cd055f35d526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDifficulty: 0
+  currentDifficulty: 2
 --- !u!1 &358304920
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,7 +1523,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &418577872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1544,8 +1544,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 193
-  baseHealth: 100
-  baseDamage: 10
+  damageAmount: 10
   patrolPoints:
   - {fileID: 8233828044781783032}
   - {fileID: 6791383680791472075}
@@ -2959,8 +2958,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 193
-  baseHealth: 100
-  baseDamage: 10
+  damageAmount: 10
   patrolPoints:
   - {fileID: 6530634682530453280}
   - {fileID: 3670975807060495192}
@@ -4463,8 +4461,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 193
-  baseHealth: 100
-  baseDamage: 10
+  damageAmount: 10
   patrolPoints:
   - {fileID: 8439742519542225775}
   - {fileID: 135720354590252110}
@@ -5210,8 +5207,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 193
-  baseHealth: 100
-  baseDamage: 10
+  damageAmount: 10
   patrolPoints:
   - {fileID: 5674639427779643152}
   - {fileID: 2481735319377258073}
@@ -5557,8 +5553,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 193
-  baseHealth: 100
-  baseDamage: 10
+  damageAmount: 10
   patrolPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -6650,8 +6645,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 193
-  baseHealth: 100
-  baseDamage: 10
+  damageAmount: 10
   patrolPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -28804,7 +28798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 0
+  currentHealth: 100
   healthBar: {fileID: 404544174}
 --- !u!114 &6928344195737181261
 MonoBehaviour:
@@ -28819,7 +28813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxOxygen: 100
-  currentOxygen: 0
+  currentOxygen: 100
   breathRate: 0
   oxygenBar: {fileID: 2112632297}
   lowOxygenWarning: {fileID: 1464810695}
@@ -32314,8 +32308,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 193
-  baseHealth: 100
-  baseDamage: 10
+  damageAmount: 10
   patrolPoints:
   - {fileID: 0}
   - {fileID: 0}

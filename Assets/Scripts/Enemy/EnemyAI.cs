@@ -13,12 +13,7 @@ public abstract class EnemyAI : MonoBehaviour
     public float shootingRange;
     public Transform player;
     public LayerMask obstacleMask;
-   // public int damageAmount = 10;
-
-    public int baseHealth = 100;
-    public int baseDamage = 10;
-    private int adjustedHealth;
-    private int adjustedDamage;
+    public int damageAmount = 10;
 
     // Patrol settings
     public List<Transform> patrolPoints;
@@ -36,10 +31,6 @@ public abstract class EnemyAI : MonoBehaviour
 
         rb2D = GetComponent<Rigidbody2D>();
         enemyHealth = GetComponent<HealthManager>();
-
-        AdjustAttributesBasedOnDifficulty();
-
-        enemyHealth.SetHealth(adjustedHealth);
 
         if (rb2D != null)
         {
@@ -277,18 +268,9 @@ public abstract class EnemyAI : MonoBehaviour
         {
             if (playerHealth != null)
             {
-                playerHealth.TakeDamage(adjustedDamage);
+                playerHealth.TakeDamage(damageAmount);
             }
             yield return new WaitForSeconds(0.5f);
         }
-    }
-
-    private void AdjustAttributesBasedOnDifficulty()
-    {
-        float healthMultiplier = DifficultyManager.Instance.GetHealthMultiplier();
-        float damageMultiplier = DifficultyManager.Instance.GetDamageMultiplier();
-
-        adjustedHealth = Mathf.RoundToInt(baseHealth * healthMultiplier);
-        adjustedDamage = Mathf.RoundToInt(baseDamage * damageMultiplier);
     }
 }
