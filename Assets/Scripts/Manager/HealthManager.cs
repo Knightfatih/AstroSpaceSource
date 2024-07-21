@@ -68,6 +68,9 @@ public class HealthManager : MonoBehaviour
     private void Die()
     {
         Debug.Log(gameObject.name + " died.");
+
+        //Set up dead boolean true to set activate you die UI
+        //Change the character sprite
         Destroy(gameObject);
     }
 }
