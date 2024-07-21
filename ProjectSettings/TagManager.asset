@@ -12,6 +12,7 @@ TagManager:
   - BossTrigger
   - Enemy
   - PickUps
+  - EnemySpawn
   layers:
   - Default
   - TransparentFX
