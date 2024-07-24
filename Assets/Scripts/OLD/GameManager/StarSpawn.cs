@@ -38,21 +38,13 @@ public class StarSpawn : MonoBehaviour
             newStar.SetActive(true);
             newStar.GetComponent<Rigidbody2D>().velocity = new Vector3(-Random.Range(starSpeedMin, starSpeedMax), 0f);
         }
-        else
-        {
-            Debug.LogWarning("No available star in the pool to spawn.");
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Stars"))
+        if (other.CompareTag("Star"))
         {
-            // Check if the object is not null and is indeed a star
-            if (other.gameObject != null)
-            {
-                other.gameObject.SetActive(false);
-            }
+            ObjectPooler.Instance.ReturnToPool(other.gameObject);
         }
     }
 }

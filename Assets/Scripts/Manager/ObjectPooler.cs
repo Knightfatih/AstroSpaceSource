@@ -5,45 +5,60 @@ using UnityEngine;
 public class ObjectPooler : MonoBehaviour
 {
     public static ObjectPooler Instance;
-    [SerializeField] GameObject[] objectsToPool;
-    [SerializeField] int poolSize = 10;
-    private List<GameObject> pooledObjects;
 
-    private void Awake()
+    [System.Serializable]
+    public class Pool
     {
-        Instance = this;
+        public GameObject prefab;
+        public int size;
     }
 
-    private void Start()
+    public List<Pool> pools;
+    public Dictionary<int, Queue<GameObject>> poolDictionary;
+    private Transform poolParent;
+
+    void Awake()
     {
-        pooledObjects = new List<GameObject>();
-        for (int i = 0; i < poolSize; i++)
+        Instance = this;
+        poolParent = this.transform;
+    }
+
+    void Start()
+    {
+        poolDictionary = new Dictionary<int, Queue<GameObject>>();
+
+        for (int i = 0; i < pools.Count; i++)
         {
-            foreach (GameObject obj in objectsToPool)
+            Queue<GameObject> objectPool = new Queue<GameObject>();
+
+            for (int j = 0; j < pools[i].size; j++)
             {
-                GameObject newObj = Instantiate(obj);
-                newObj.SetActive(false);
-                pooledObjects.Add(newObj);
+                GameObject obj = Instantiate(pools[i].prefab);
+                obj.SetActive(false);
+                obj.transform.SetParent(poolParent);
+                objectPool.Enqueue(obj);
             }
+
+            poolDictionary.Add(i, objectPool);
         }
     }
 
     public GameObject GetPooledObject(int index)
     {
-        foreach (GameObject obj in pooledObjects)
+        if (!poolDictionary.ContainsKey(index))
         {
-            if (!obj.activeInHierarchy && obj.name.StartsWith(objectsToPool[index].name))
-            {
-                return obj;
-            }
+            Debug.LogWarning("Pool with index " + index + " doesn't exist.");
+            return null;
         }
 
-        return null;
+        GameObject objectToReuse = poolDictionary[index].Dequeue();
+        poolDictionary[index].Enqueue(objectToReuse);
+        return objectToReuse;
+    }
 
-        // If no inactive object is found instantiate a new one
-        //GameObject newObj = Instantiate(objectsToPool[index]);
-        //newObj.SetActive(false);
-        //pooledObjects.Add(newObj);
-        //return newObj;
+    public void ReturnToPool(GameObject obj)
+    {
+        obj.SetActive(false);
+        obj.transform.SetParent(poolParent);
     }
 }
