@@ -15,11 +15,13 @@ public class RoomTemplates : MonoBehaviour
 
     public List<GameObject> rooms;
 
-    public float waitTime = 0.5f;
+    public float waitTime = 1f;
     private bool spawnedBoss;
     public GameObject boss;
 
     private bool _spawning = false;
+
+    public Transform roomContainer;
 
     public bool Spawning
     {

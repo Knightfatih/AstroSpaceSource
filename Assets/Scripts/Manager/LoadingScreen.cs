@@ -37,7 +37,6 @@ public class LoadingScreen : MonoBehaviour
             if (loadingSlider != null)
             {
                 loadingSlider.value = Mathf.Clamp01(elapsedTime / loadingDuration);
-                Debug.Log("Loading progress: " + loadingSlider.value);
             }
             yield return null;
         }

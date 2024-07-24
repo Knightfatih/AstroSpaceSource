@@ -13,7 +13,7 @@ public class RoomSpawner : MonoBehaviour
     private RoomTemplates templates;
     public bool spawned = false;
 
-    public float waitTime = 4f;
+    public float waitTime = 5f;
 
     void Start()
     {
@@ -54,7 +54,14 @@ public class RoomSpawner : MonoBehaviour
             if (roomsArray != null && roomsArray.Length > 0)
             {
                 int rand = Random.Range(0, roomsArray.Length);
-                Instantiate(roomsArray[rand], transform.position, roomsArray[rand].transform.rotation);
+                GameObject spawnedRoom = Instantiate(roomsArray[rand], transform.position, roomsArray[rand].transform.rotation);
+
+                // Set the parent of the spawned room to the roomContainer
+                spawnedRoom.transform.SetParent(templates.roomContainer, false);
+
+                // Add the spawned room to the rooms list in RoomTemplates
+                templates.rooms.Add(spawnedRoom);
+
                 spawned = true;
             }
         }
@@ -67,7 +74,11 @@ public class RoomSpawner : MonoBehaviour
             var otherSpawner = other.GetComponent<RoomSpawner>();
             if (otherSpawner != null && !otherSpawner.spawned && !spawned)
             {
-                Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
+                GameObject closedRoomInstance = Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
+
+                // Set the parent of the closed room to the roomContainer
+                closedRoomInstance.transform.SetParent(templates.roomContainer, false);
+
                 Destroy(gameObject);
             }
             spawned = true;
