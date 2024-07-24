@@ -1579,6 +1579,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: 2DSprite_16
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1988
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b21a2b28fa382a34abcdcd25ee8c6c79
+      internalID: 1847856253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSprite_17
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 1851
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2ee9b0eb1f405346a7c8c214ef8fd5d
+      internalID: -811268738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1599,6 +1641,7 @@ TextureImporter:
       2DSprite_14: 8610965820510188393
       2DSprite_15: -1499050086
       2DSprite_16: 1847856253
+      2DSprite_17: -811268738
       2DSprite_18: -3194163427880825043
       2DSprite_19: 5807895885291323009
       2DSprite_2: 9087955246791791353

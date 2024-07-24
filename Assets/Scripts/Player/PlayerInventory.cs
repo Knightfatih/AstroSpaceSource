@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class PlayerInventory : MonoBehaviour
 {
@@ -18,8 +18,8 @@ public class PlayerInventory : MonoBehaviour
     public GameObject shotgunUI;
     public GameObject rifleUI;
 
-    public TMP_Text ammoText;
-    public TMP_Text magazineText;
+    public Text ammoText;
+    public Text magazineText;
 
     private void Start()
     {
@@ -110,8 +110,8 @@ public class PlayerInventory : MonoBehaviour
         if (weapons.Count > 0)
         {
             Weapon currentWeapon = weapons[currentWeaponIndex];
-            ammoText.text = "Ammo: " + currentWeapon.ammo + " / " + currentWeapon.features.maxAmmo;
-            magazineText.text = "Magazines: " + currentWeapon.features.magazineCount;
+            ammoText.text = "Ammo:" + currentWeapon.ammo + "/" + currentWeapon.features.maxAmmo;
+            magazineText.text = "Mag:" + currentWeapon.features.magazineCount;
         }
     }
 

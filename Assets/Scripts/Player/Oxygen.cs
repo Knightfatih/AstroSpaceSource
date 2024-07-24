@@ -8,8 +8,11 @@ public class Oxygen : MonoBehaviour
     public int maxOxygen = 100;
     public float currentOxygen;
     public float breathRate;
+
     public OxygenBar oxygenBar;
     public GameObject lowOxygenWarning;
+    [SerializeField] private float flashInterval = 0.5f;
+    private bool isFlashing = false;
 
     private void Awake()
     {
@@ -50,19 +53,21 @@ public class Oxygen : MonoBehaviour
         {
             oxygenBar.SetOxygen((int)currentOxygen);
         }
+
         if (currentOxygen < 24)
         {
-            if (!lowOxygenWarning.activeSelf)
+            if (!isFlashing)
             {
                 StartCoroutine(FlashLowOxygenWarning());
             }
         }
         else
         {
-            if (lowOxygenWarning.activeSelf)
+            if (isFlashing)
             {
                 StopCoroutine(FlashLowOxygenWarning());
                 lowOxygenWarning.SetActive(false);
+                isFlashing = false;
             }
         }
     }
@@ -78,11 +83,14 @@ public class Oxygen : MonoBehaviour
 
     private IEnumerator FlashLowOxygenWarning()
     {
+        isFlashing = true;
         while (currentOxygen < 24)
         {
-            lowOxygenWarning.SetActive(!lowOxygenWarning.activeSelf);
-            yield return new WaitForSeconds(0.25f);
+            lowOxygenWarning.SetActive(true);
+            yield return new WaitForSeconds(flashInterval);
+            lowOxygenWarning.SetActive(false);
+            yield return new WaitForSeconds(flashInterval);
         }
-        lowOxygenWarning.SetActive(false);
+        isFlashing = false;
     }
 }
