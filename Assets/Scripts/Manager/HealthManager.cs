@@ -8,6 +8,14 @@ public class HealthManager : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBar;
 
+    public bool playerDeath { get; set; }
+    public bool bossDeath { get; set; }
+
+    public static bool GameIsPaused = false;
+
+    public GameObject gameOverUI;
+    public GameObject youWonUI;
+
     private void Awake()
     {
         maxHealth = DifficultyManager.Instance.GetMaxHealth();
@@ -68,9 +76,22 @@ public class HealthManager : MonoBehaviour
     private void Die()
     {
         Debug.Log(gameObject.name + " died.");
-
-        //Set up dead boolean true to set activate you die UI
         //Change the character sprite
-        Destroy(gameObject);
+
+        if (playerDeath)
+        {
+            gameOverUI.SetActive(true);
+            Time.timeScale = 0f;
+            GameIsPaused = true;
+        }
+
+        if (bossDeath)
+        {
+            youWonUI.SetActive(true);
+            Time.timeScale = 0f;
+            GameIsPaused = true;
+        }
+
+        Destroy(gameObject, 1f);
     }
 }

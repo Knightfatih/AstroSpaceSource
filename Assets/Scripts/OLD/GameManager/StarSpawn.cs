@@ -14,7 +14,6 @@ public class StarSpawn : MonoBehaviour
     float starSpeedMax = 20f;
     float starSpeedMin = 5f;
 
-    // Update is called once per frame
     void Update()
     {
         spawnTimer += Time.deltaTime;
@@ -24,13 +23,36 @@ public class StarSpawn : MonoBehaviour
             spawnTimer = 0f;
         }
     }
-    
+
     void SpawnStar()
     {
         int starToSpawn = Random.Range(0, stars.Length);
-        float spawnYoffset = (Random.Range(spawnYMin, spawnYMax) * spawnHeight);
+        float spawnYoffset = Random.Range(spawnYMin, spawnYMax) * spawnHeight;
         Vector3 spawnPoint = new Vector3(transform.position.x, transform.position.y + spawnYoffset);
-        GameObject newStar = Instantiate(stars[starToSpawn], spawnPoint, transform.rotation);
-        newStar.GetComponent<Rigidbody2D>().velocity = new Vector3(-Random.Range(starSpeedMin, starSpeedMax), 0f);
+
+        GameObject newStar = ObjectPooler.Instance.GetPooledObject(starToSpawn);
+        if (newStar != null)
+        {
+            newStar.transform.position = spawnPoint;
+            newStar.transform.rotation = transform.rotation;
+            newStar.SetActive(true);
+            newStar.GetComponent<Rigidbody2D>().velocity = new Vector3(-Random.Range(starSpeedMin, starSpeedMax), 0f);
+        }
+        else
+        {
+            Debug.LogWarning("No available star in the pool to spawn.");
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Stars"))
+        {
+            // Check if the object is not null and is indeed a star
+            if (other.gameObject != null)
+            {
+                other.gameObject.SetActive(false);
+            }
+        }
     }
 }

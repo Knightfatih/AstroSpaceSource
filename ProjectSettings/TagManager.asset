@@ -13,6 +13,7 @@ TagManager:
   - Enemy
   - PickUps
   - EnemySpawn
+  - Stars
   layers:
   - Default
   - TransparentFX
