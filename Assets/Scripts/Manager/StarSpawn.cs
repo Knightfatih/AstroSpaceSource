@@ -6,13 +6,13 @@ public class StarSpawn : MonoBehaviour
 {
     [SerializeField] GameObject[] stars;
 
-    float spawnTimer = 0f;
-    float spawnDelay = 0.1f;
-    float spawnYMin = 5f;
-    float spawnYMax = -5f;
-    float spawnHeight = 3f;
-    float starSpeedMax = 20f;
-    float starSpeedMin = 5f;
+    [SerializeField] float spawnTimer = 0f;
+    [SerializeField] float spawnDelay = 0.1f;
+    [SerializeField] float spawnYMin = 5f;
+    [SerializeField] float spawnYMax = -5f;
+    [SerializeField] float spawnHeight = 3f;
+    [SerializeField] float starSpeedMax = 20f;
+    [SerializeField] float starSpeedMin = 5f;
 
     void Update()
     {

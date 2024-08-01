@@ -1166,7 +1166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingPanel: {fileID: 32682795}
   loadingSlider: {fileID: 1688988131}
-  loadingDuration: 1
+  loadingDuration: 5
   healthbarUI: {fileID: 404544171}
   oxygenbarUI: {fileID: 2112632295}
   weaponUI: {fileID: 911166390}
