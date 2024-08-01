@@ -54,31 +54,34 @@ public abstract class EnemyAI : MonoBehaviour
     {
         playerInSight = RaycastToPlayer();
 
-        if (playerInSight)
+        if (!LoadingScreen.loadingBool)
         {
-            isPatrolling = false;
-            RotateTowardsPlayer();
-            StopPatrolling();
-            speed = chasingSpeed;
-
-            if (this is UnarmedEnemy)
+            if (playerInSight)
             {
-                MoveTowardsPlayer();
-            }
-        }
-        else
-        {
-            if (!isPatrolling)
-            {
-                MoveTowardsLastPatrolPoint();
+                isPatrolling = false;
+                RotateTowardsPlayer();
+                StopPatrolling();
+                speed = chasingSpeed;
 
-                //closestWaypoint = FindClosestWaypoint();
-                //MoveTowardsClosestWaypoint();
+                if (this is UnarmedEnemy)
+                {
+                    MoveTowardsPlayer();
+                }
             }
             else
             {
-                speed = patrollingSpeed;
-                Patrol();
+                if (!isPatrolling)
+                {
+                    MoveTowardsLastPatrolPoint();
+
+                    //closestWaypoint = FindClosestWaypoint();
+                    //MoveTowardsClosestWaypoint();
+                }
+                else
+                {
+                    speed = patrollingSpeed;
+                    Patrol();
+                }
             }
         }
     }

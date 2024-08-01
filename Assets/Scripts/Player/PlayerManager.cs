@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UI;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -43,32 +44,36 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
-        ProcessInputs();
-        Aim();
-
-        if (Input.GetMouseButtonDown(0))
+        if (!LoadingScreen.loadingBool && !PauseMenu.GameIsPaused)
         {
-            playerInventory.UseCurrentWeapon();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            playerInventory.SwitchWeapon();
-        }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            playerInventory.ReloadCurrentWeapon();
-        }
-
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            if (oxygen.currentOxygen > oxygenConsumptionRate)
+            ProcessInputs();
+            Aim();
+        
+            if (Input.GetMouseButtonDown(0))
             {
-                oxygen.ConsumeOxygen(oxygenConsumptionRate * Time.deltaTime);
-                movement *= runSpeed / moveSpeed;
+                playerInventory.UseCurrentWeapon();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                playerInventory.SwitchWeapon();
+            }
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                playerInventory.ReloadCurrentWeapon();
+            }
+
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                if (oxygen.currentOxygen > oxygenConsumptionRate)
+                {
+                    oxygen.ConsumeOxygen(oxygenConsumptionRate * Time.deltaTime);
+                    movement *= runSpeed / moveSpeed;
+                }
             }
         }
+
     }
 
     private void FixedUpdate()

@@ -8,9 +8,9 @@ namespace UI
     public class PauseMenu : MonoBehaviour
     {
         [SerializeField] private GameObject _pauseMenuUI;
-        [SerializeField] private string _mainMenuSceneName = "Main Menu";
+        [SerializeField] private string _mainMenuSceneName = "MainMenu";
 
-        private static bool _gameIsPaused;
+        public static bool _gameIsPaused;
 
         public static bool GameIsPaused
         {
@@ -48,6 +48,12 @@ namespace UI
 
         private void Pause()
         {
+            // Prevent pausing if the loading screen is active
+            if (LoadingScreen.loadingBool)
+            {
+                return;
+            }
+
             // Activate pause menu UI and pause game time
             if (_pauseMenuUI != null)
             {

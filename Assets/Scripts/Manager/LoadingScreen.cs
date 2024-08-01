@@ -10,11 +10,17 @@ public class LoadingScreen : MonoBehaviour
     [SerializeField] private Slider loadingSlider;
     [SerializeField] private float loadingDuration;
 
+    public static bool loadingBool;
+
+    [SerializeField] private GameObject healthbarUI;
+    [SerializeField] private GameObject oxygenbarUI;
+    [SerializeField] private GameObject weaponUI;
+
     private void Start()
     {
         if (loadingPanel != null && loadingSlider != null)
         {
-            //loading bool = true
+            loadingBool = true;
             StartCoroutine(ShowLoadingScreen());
         }
         else
@@ -45,7 +51,11 @@ public class LoadingScreen : MonoBehaviour
         {
             loadingPanel.SetActive(false);
 
-            //loading bool = false
+            loadingBool = false;
+
+            healthbarUI.SetActive(true);
+            oxygenbarUI.SetActive(true);
+            weaponUI.SetActive(true);
         }
     }
 }

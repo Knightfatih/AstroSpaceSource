@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1166,7 +1166,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingPanel: {fileID: 32682795}
   loadingSlider: {fileID: 1688988131}
-  loadingDuration: 5
+  loadingDuration: 1
+  healthbarUI: {fileID: 404544171}
+  oxygenbarUI: {fileID: 2112632295}
+  weaponUI: {fileID: 911166390}
 --- !u!1 &358304920
 GameObject:
   m_ObjectHideFlags: 0
@@ -2765,7 +2768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pauseMenuUI: {fileID: 82881408}
-  _mainMenuSceneName: Main Menu
+  _mainMenuSceneName: MainMenu
 --- !u!1 &704339627
 GameObject:
   m_ObjectHideFlags: 0
@@ -2786,7 +2789,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &704339628
 SpriteRenderer:
   m_ObjectHideFlags: 0
