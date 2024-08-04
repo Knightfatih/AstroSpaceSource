@@ -2958,10 +2958,10 @@ MonoBehaviour:
     m_Bits: 193
   damageAmount: 10
   patrolPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7506862085377972397}
+  - {fileID: 1159684413499427669}
+  - {fileID: 7286547159951136670}
+  - {fileID: 2943185805016265566}
   barrelEnd: {fileID: 225060422}
 --- !u!114 &704339633
 MonoBehaviour:
