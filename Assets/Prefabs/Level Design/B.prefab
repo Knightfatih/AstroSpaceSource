@@ -287,7 +287,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 505615334, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: 530177110, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -883,7 +883,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 505615334, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: -897026638, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1300,7 +1300,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 505615334, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: 1210937595, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1914,7 +1914,7 @@ GameObject:
   - component: {fileID: 4698418271705495490}
   - component: {fileID: 7837373700930102863}
   m_Layer: 6
-  m_Name: New Sprite (043)
+  m_Name: DamagableWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1976,7 +1976,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1183966263, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: 1682124728, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2047,7 +2047,7 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   damageSprites:
-  - {fileID: -1499050086, guid: b55a46332bea1d04095bb43e1ee6886a, type: 3}
+  - {fileID: 488586973, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
 --- !u!1 &805245598216055666
 GameObject:
   m_ObjectHideFlags: 0
@@ -2463,7 +2463,7 @@ GameObject:
   - component: {fileID: 6443253553440435161}
   - component: {fileID: 6522502451622785117}
   m_Layer: 6
-  m_Name: New Sprite (042)
+  m_Name: DamagableWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2525,7 +2525,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1183966263, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: 720813040, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2596,7 +2596,7 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   damageSprites:
-  - {fileID: -2036470165, guid: b55a46332bea1d04095bb43e1ee6886a, type: 3}
+  - {fileID: 1498543742, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
 --- !u!1 &1017617260769060688
 GameObject:
   m_ObjectHideFlags: 0
@@ -2610,7 +2610,7 @@ GameObject:
   - component: {fileID: 5583140980559899876}
   - component: {fileID: 30829962887713454}
   m_Layer: 6
-  m_Name: New Sprite (041)
+  m_Name: DamagableWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2672,7 +2672,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1183966263, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: -1731639805, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2743,7 +2743,7 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   damageSprites:
-  - {fileID: 1337232353, guid: b55a46332bea1d04095bb43e1ee6886a, type: 3}
+  - {fileID: 445429350, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
 --- !u!1 &1043134176117475104
 GameObject:
   m_ObjectHideFlags: 0
@@ -3276,7 +3276,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 505615334, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: -2104946599, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4737,7 +4737,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1183966263, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: -54717726, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4936,7 +4936,7 @@ GameObject:
   - component: {fileID: 482557407232879412}
   - component: {fileID: 4911531225043509800}
   m_Layer: 6
-  m_Name: New Sprite (32)
+  m_Name: DamagableWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4998,7 +4998,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1183966263, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: 632020689, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5069,7 +5069,7 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   damageSprites:
-  - {fileID: -1078114833, guid: b55a46332bea1d04095bb43e1ee6886a, type: 3}
+  - {fileID: -254621070, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
 --- !u!1 &2008131887522643346
 GameObject:
   m_ObjectHideFlags: 0
@@ -5357,7 +5357,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 505615334, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: -897026638, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6015,7 +6015,7 @@ GameObject:
   - component: {fileID: 5120774965313690193}
   - component: {fileID: 865502581922393879}
   m_Layer: 6
-  m_Name: New Sprite (038)
+  m_Name: DamagableWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6077,7 +6077,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1183966263, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: 720813040, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6148,7 +6148,7 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   damageSprites:
-  - {fileID: -2036470165, guid: b55a46332bea1d04095bb43e1ee6886a, type: 3}
+  - {fileID: 1498543742, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
 --- !u!1 &2273097980995799429
 GameObject:
   m_ObjectHideFlags: 0
@@ -6604,7 +6604,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 505615334, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: 1798628131, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6856,7 +6856,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 505615334, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: -897026638, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7087,7 +7087,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1183966263, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: -1372156538, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7266,7 +7266,7 @@ GameObject:
   - component: {fileID: 7492729694972674232}
   - component: {fileID: 7588217830416374997}
   m_Layer: 6
-  m_Name: New Sprite (037)
+  m_Name: DamagableWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7328,7 +7328,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1183966263, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: -1731639805, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7399,7 +7399,7 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   damageSprites:
-  - {fileID: 1337232353, guid: b55a46332bea1d04095bb43e1ee6886a, type: 3}
+  - {fileID: 445429350, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
 --- !u!1 &2603451675523473637
 GameObject:
   m_ObjectHideFlags: 0
@@ -7497,7 +7497,7 @@ GameObject:
   - component: {fileID: 2998221894362304512}
   - component: {fileID: 7013630505003497497}
   m_Layer: 6
-  m_Name: New Sprite (036)
+  m_Name: DamagableWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7559,7 +7559,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1183966263, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: 632020689, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7630,7 +7630,7 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   damageSprites:
-  - {fileID: -1078114833, guid: b55a46332bea1d04095bb43e1ee6886a, type: 3}
+  - {fileID: -254621070, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
 --- !u!1 &2632160562366283874
 GameObject:
   m_ObjectHideFlags: 0
@@ -7644,7 +7644,7 @@ GameObject:
   - component: {fileID: 7159880924004842673}
   - component: {fileID: 3603296391829233109}
   m_Layer: 6
-  m_Name: New Sprite (035)
+  m_Name: DamagableWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7706,7 +7706,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1183966263, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: 1682124728, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7777,7 +7777,7 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   damageSprites:
-  - {fileID: -1499050086, guid: b55a46332bea1d04095bb43e1ee6886a, type: 3}
+  - {fileID: 488586973, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
 --- !u!1 &2636753307011882800
 GameObject:
   m_ObjectHideFlags: 0
@@ -8242,7 +8242,7 @@ GameObject:
   - component: {fileID: 1250580201402565067}
   - component: {fileID: 4653819249387881208}
   m_Layer: 6
-  m_Name: New Sprite (040)
+  m_Name: DamagableWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8304,7 +8304,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1183966263, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: 632020689, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8375,7 +8375,7 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   damageSprites:
-  - {fileID: -1078114833, guid: b55a46332bea1d04095bb43e1ee6886a, type: 3}
+  - {fileID: -254621070, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
 --- !u!1 &2783802602049580685
 GameObject:
   m_ObjectHideFlags: 0
@@ -9335,7 +9335,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -897026638, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: 1510783420, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9917,7 +9917,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 505615334, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: -897026638, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -11614,7 +11614,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 505615334, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: 1123737877, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -12055,7 +12055,7 @@ GameObject:
   - component: {fileID: 8508624627704840781}
   - component: {fileID: 4962557060083906425}
   m_Layer: 6
-  m_Name: New Sprite (034)
+  m_Name: DamagableWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12117,7 +12117,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1183966263, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: 720813040, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -12188,7 +12188,7 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   damageSprites:
-  - {fileID: -2036470165, guid: b55a46332bea1d04095bb43e1ee6886a, type: 3}
+  - {fileID: 1498543742, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
 --- !u!1 &3975937564469241062
 GameObject:
   m_ObjectHideFlags: 0
@@ -12202,7 +12202,7 @@ GameObject:
   - component: {fileID: 5896426441499911068}
   - component: {fileID: 79862723361549733}
   m_Layer: 6
-  m_Name: New Sprite (044)
+  m_Name: DamagableWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12264,7 +12264,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1183966263, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: 632020689, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -12335,7 +12335,7 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   damageSprites:
-  - {fileID: -1078114833, guid: b55a46332bea1d04095bb43e1ee6886a, type: 3}
+  - {fileID: -254621070, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
 --- !u!1 &3993814313470806910
 GameObject:
   m_ObjectHideFlags: 0
@@ -12409,7 +12409,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 505615334, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: -2104946599, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13005,7 +13005,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 505615334, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: -897026638, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13877,7 +13877,7 @@ GameObject:
   - component: {fileID: 8646205757295434643}
   - component: {fileID: 7140170173040299160}
   m_Layer: 6
-  m_Name: New Sprite (045)
+  m_Name: DamagableWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13939,7 +13939,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1183966263, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: -1731639805, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -14010,7 +14010,7 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   damageSprites:
-  - {fileID: 1337232353, guid: b55a46332bea1d04095bb43e1ee6886a, type: 3}
+  - {fileID: 445429350, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
 --- !u!1 &4330630735707861088
 GameObject:
   m_ObjectHideFlags: 0
@@ -14639,7 +14639,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1183966263, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: -1431407483, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -15779,7 +15779,7 @@ GameObject:
   - component: {fileID: 7082780269853317559}
   - component: {fileID: 7916405645429336860}
   m_Layer: 6
-  m_Name: New Sprite (30)
+  m_Name: DamagableWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15841,7 +15841,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1183966263, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: 720813040, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -15912,7 +15912,7 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   damageSprites:
-  - {fileID: -2036470165, guid: b55a46332bea1d04095bb43e1ee6886a, type: 3}
+  - {fileID: 1498543742, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
 --- !u!1 &4742677798032422138
 GameObject:
   m_ObjectHideFlags: 0
@@ -16704,7 +16704,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 505615334, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: -897026638, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -17362,7 +17362,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 505615334, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: -897026638, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -17614,7 +17614,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 505615334, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: -897026638, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -20121,7 +20121,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -897026638, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: 1510783420, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -20205,7 +20205,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 505615334, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: -897026638, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -20817,7 +20817,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 505615334, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: 530177110, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -21650,7 +21650,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 505615334, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: -131249921, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -22132,7 +22132,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 505615334, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: -897026638, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -22867,7 +22867,7 @@ GameObject:
   - component: {fileID: 1610677129121177316}
   - component: {fileID: 580833434345720075}
   m_Layer: 6
-  m_Name: New Sprite (31)
+  m_Name: DamagableWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22929,7 +22929,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1183966263, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: 1682124728, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -23000,7 +23000,7 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   damageSprites:
-  - {fileID: -1499050086, guid: b55a46332bea1d04095bb43e1ee6886a, type: 3}
+  - {fileID: 488586973, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
 --- !u!1 &7242959135817771704
 GameObject:
   m_ObjectHideFlags: 0
@@ -23297,7 +23297,7 @@ GameObject:
   - component: {fileID: 3882551993032245632}
   - component: {fileID: 877602528382686309}
   m_Layer: 6
-  m_Name: New Sprite (033)
+  m_Name: DamagableWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23359,7 +23359,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1183966263, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: -1731639805, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -23430,7 +23430,7 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   damageSprites:
-  - {fileID: 1337232353, guid: b55a46332bea1d04095bb43e1ee6886a, type: 3}
+  - {fileID: 445429350, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
 --- !u!1 &7540828561956196365
 GameObject:
   m_ObjectHideFlags: 0
@@ -23504,7 +23504,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 505615334, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: -897026638, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -23619,7 +23619,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 505615334, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: -897026638, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -24498,7 +24498,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 505615334, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: -1313788123, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -25599,7 +25599,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1183966263, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: 1947692375, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -26064,7 +26064,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 505615334, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: -897026638, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -26232,7 +26232,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 505615334, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: -897026638, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -26316,7 +26316,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 505615334, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: -897026638, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -26813,7 +26813,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 505615334, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: 1123737877, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -26897,7 +26897,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 505615334, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: -897026638, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -27219,7 +27219,7 @@ GameObject:
   - component: {fileID: 4623801829237498513}
   - component: {fileID: 3893402006797814762}
   m_Layer: 6
-  m_Name: New Sprite (039)
+  m_Name: DamagableWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27281,7 +27281,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1183966263, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
+  m_Sprite: {fileID: 1682124728, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -27352,7 +27352,7 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   damageSprites:
-  - {fileID: -1499050086, guid: b55a46332bea1d04095bb43e1ee6886a, type: 3}
+  - {fileID: 488586973, guid: 7883b8bbf927e6842b397293494faab3, type: 3}
 --- !u!1 &8811844750682153849
 GameObject:
   m_ObjectHideFlags: 0
