@@ -11,7 +11,7 @@ namespace Manager
     {
         // UI Components
         public Slider musicVolumeSlider;
-        public Slider soundVolumeSlider; // Placeholder for sound volume slider
+        public Slider soundVolumeSlider;
         public TMP_Dropdown displayDropdown;
         public TMP_Dropdown resolutionDropdown;
 
@@ -112,6 +112,32 @@ namespace Manager
         {
             Debug.Log("Exit");
             Application.Quit();
+        }
+
+        public void SetEasyDifficulty()
+        {
+            DifficultyManager.Instance.currentDifficulty = DifficultyLevel.Easy;
+            Debug.Log("Difficulty set to Easy");
+            StartGame();
+        }
+
+        public void SetNormalDifficulty()
+        {
+            DifficultyManager.Instance.currentDifficulty = DifficultyLevel.Normal;
+            Debug.Log("Difficulty set to Normal");
+            StartGame();
+        }
+
+        public void SetHardDifficulty()
+        {
+            DifficultyManager.Instance.currentDifficulty = DifficultyLevel.Hard;
+            Debug.Log("Difficulty set to Hard");
+            StartGame();
+        }
+
+        private void StartGame()
+        {
+            SceneManager.LoadScene("Game");
         }
     }
 
