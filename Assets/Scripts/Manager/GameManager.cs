@@ -6,10 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public GameObject[] spawnPoints;
     public GameObject[] prefabsToSpawn;
-
-    public GameObject[] enemySpawnPoints;
+    
     public GameObject[] enemyPrefabs;
 
     void Awake()

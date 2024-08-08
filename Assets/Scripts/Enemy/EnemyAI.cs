@@ -22,6 +22,7 @@ public abstract class EnemyAI : MonoBehaviour
     protected bool playerInSight = false;
     protected Transform lastPatrolPoint;
     private Transform closestWaypoint;
+    public float waypointDetectionDistance = 4f;
 
     protected Rigidbody2D rb2D;
     protected HealthManager enemyHealth;
@@ -39,7 +40,11 @@ public abstract class EnemyAI : MonoBehaviour
         }
 
         // Find all waypoints in the scene
-        SetPatrolPoints();
+        GameObject[] waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
+        foreach (GameObject waypoint in waypoints)
+        {
+            patrolPoints.Add(waypoint.transform);
+        }
 
         if (patrolPoints.Count > 0)
         {
@@ -58,10 +63,20 @@ public abstract class EnemyAI : MonoBehaviour
 
     public void SetPatrolPoints()
     {
+        // Clear any existing patrol points
+        patrolPoints.Clear();
+
+        // Find all waypoints in the scene
         GameObject[] waypointObjects = GameObject.FindGameObjectsWithTag("Waypoint");
         foreach (GameObject waypoint in waypointObjects)
         {
             patrolPoints.Add(waypoint.transform);
+        }
+
+        if (patrolPoints.Count > 0)
+        {
+            currentPatrolIndex = Random.Range(0, patrolPoints.Count);
+            transform.position = patrolPoints[currentPatrolIndex].position;
         }
     }
 
@@ -172,6 +187,38 @@ public abstract class EnemyAI : MonoBehaviour
         }
     }
 
+    private void RaycastForWaypoint()
+    {
+        Vector2 direction = transform.up;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, waypointDetectionDistance);
+
+        if (hit.collider != null && hit.collider.CompareTag("Waypoint"))
+        {
+            Vector2 waypointPosition = hit.collider.transform.position;
+            MoveTowardsWaypoint(waypointPosition);
+        }
+        else
+        {
+            RotateTowardsNextWaypoint();
+        }
+    }
+
+    private void MoveTowardsWaypoint(Vector2 waypointPosition)
+    {
+        Vector2 direction = (waypointPosition - (Vector2)transform.position).normalized;
+        rb2D.velocity = direction * speed;
+    }
+
+    private void RotateTowardsNextWaypoint()
+    {
+        transform.Rotate(0, 0, Random.Range(0, 2) == 0 ? -91 : 91);
+    }
+
+    protected void StopPatrolling()
+    {
+        rb2D.velocity = Vector2.zero;
+    }
+
     private Transform FindClosestWaypoint()
     {
         Transform closestWaypoint = null;
@@ -204,11 +251,6 @@ public abstract class EnemyAI : MonoBehaviour
             currentPatrolIndex = patrolPoints.IndexOf(closestWaypoint);
             closestWaypoint = null;
         }
-    }
-
-    protected void StopPatrolling()
-    {
-        rb2D.velocity = Vector2.zero;
     }
 
     private void FixedUpdate()

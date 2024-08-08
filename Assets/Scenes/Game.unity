@@ -1015,14 +1015,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ead4abe81bf80042aef7662fb64e2d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoints: []
   prefabsToSpawn:
   - {fileID: 4820558446536740434, guid: 40a88a8734e344f469bd5acf07eaba8b, type: 3}
   - {fileID: 1749059516329564668, guid: 619d7bd5c6fce1541aa0d81627126cbb, type: 3}
   - {fileID: 3826725002810680628, guid: 8e5ae9a764d938444bb881953e5f37aa, type: 3}
   - {fileID: 186992228313130213, guid: c9b337f8f29b0c741aba81c74807de4d, type: 3}
   - {fileID: 1514258946731871555, guid: 07cd356a1668aca43be81b7276b8180f, type: 3}
-  enemySpawnPoints: []
   enemyPrefabs:
   - {fileID: 2435448499263243920, guid: e433bf178c0aaaf43a6a5652fab5a8a8, type: 3}
 --- !u!4 &343394936
@@ -4489,6 +4487,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 193
   damageAmount: 10
+  waypointDetectionDistance: 4
   barrelEnd: {fileID: 405495364}
 --- !u!61 &1416974427
 BoxCollider2D:
@@ -5511,6 +5510,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 193
   damageAmount: 10
+  waypointDetectionDistance: 4
   barrelEnd: {fileID: 0}
 --- !u!114 &1647547229
 MonoBehaviour:
@@ -17041,6 +17041,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemyWithPistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435448499263243920, guid: e433bf178c0aaaf43a6a5652fab5a8a8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6135187409101873388, guid: e433bf178c0aaaf43a6a5652fab5a8a8,
         type: 3}
@@ -29256,7 +29261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2922efaaf47c10642814d0f08557db04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 100000
   currentHealth: 100
   healthBar: {fileID: 404544174}
   gameOverUI: {fileID: 0}
@@ -32108,6 +32113,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 193
   damageAmount: 10
+  waypointDetectionDistance: 4
   barrelEnd: {fileID: 8085536335140038741}
   spriteRifle: {fileID: -4134538670620478512, guid: dc17de20c6dff2a4eb2ef24fb8b35b0a,
     type: 3}
