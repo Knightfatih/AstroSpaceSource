@@ -2100,7 +2100,7 @@ GameObject:
   - component: {fileID: 7677536992213010616}
   m_Layer: 0
   m_Name: MoveSpot (11)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4501,7 +4501,7 @@ GameObject:
   - component: {fileID: 6756567813255051050}
   m_Layer: 0
   m_Name: MoveSpot (7)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9016,7 +9016,7 @@ GameObject:
   - component: {fileID: 127635115282873465}
   m_Layer: 0
   m_Name: MoveSpot (4)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9212,7 +9212,7 @@ GameObject:
   - component: {fileID: 3895780548933318469}
   m_Layer: 0
   m_Name: MoveSpot (12)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10154,7 +10154,7 @@ GameObject:
   - component: {fileID: 1806459380212057335}
   m_Layer: 0
   m_Name: MoveSpot (5)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10714,7 +10714,7 @@ GameObject:
   - component: {fileID: 3108852451817135561}
   m_Layer: 0
   m_Name: MoveSpot (2)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15506,7 +15506,7 @@ GameObject:
   - component: {fileID: 2351566646754646674}
   m_Layer: 0
   m_Name: MoveSpot (6)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18049,7 +18049,7 @@ GameObject:
   - component: {fileID: 970827696012340698}
   m_Layer: 0
   m_Name: MoveSpot
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19941,7 +19941,7 @@ GameObject:
   - component: {fileID: 7749628071341235413}
   m_Layer: 0
   m_Name: MoveSpot (9)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21356,7 +21356,7 @@ GameObject:
   - component: {fileID: 992608455034088468}
   m_Layer: 0
   m_Name: MoveSpot (13)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21632,7 +21632,7 @@ GameObject:
   - component: {fileID: 7265141021790014561}
   m_Layer: 0
   m_Name: MoveSpot (15)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22062,7 +22062,7 @@ GameObject:
   - component: {fileID: 8433511199139590869}
   m_Layer: 0
   m_Name: MoveSpot (3)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22307,7 +22307,7 @@ GameObject:
   - component: {fileID: 1125869457053406283}
   m_Layer: 0
   m_Name: MoveSpot (14)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23814,7 +23814,7 @@ GameObject:
   - component: {fileID: 23155610441161807}
   m_Layer: 0
   m_Name: MoveSpot (10)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24105,7 +24105,7 @@ GameObject:
   - component: {fileID: 7323140833915987062}
   m_Layer: 0
   m_Name: MoveSpot (8)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25586,7 +25586,7 @@ GameObject:
   - component: {fileID: 2581303520801983593}
   m_Layer: 0
   m_Name: MoveSpot (1)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

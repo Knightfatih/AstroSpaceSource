@@ -16,11 +16,12 @@ public abstract class EnemyAI : MonoBehaviour
     public int damageAmount = 10;
 
     // Patrol settings
-    public List<Transform> patrolPoints;
+    private List<Transform> patrolPoints = new List<Transform>();
     protected int currentPatrolIndex = 0;
     protected bool isPatrolling = true;
     protected bool playerInSight = false;
     protected Transform lastPatrolPoint;
+    private Transform closestWaypoint;
 
     protected Rigidbody2D rb2D;
     protected HealthManager enemyHealth;
@@ -37,8 +38,13 @@ public abstract class EnemyAI : MonoBehaviour
             rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
 
+        // Find all waypoints in the scene
+        SetPatrolPoints();
+
         if (patrolPoints.Count > 0)
         {
+            // Set enemy to a random patrol point at the start
+            currentPatrolIndex = Random.Range(0, patrolPoints.Count);
             transform.position = patrolPoints[currentPatrolIndex].position;
         }
 
@@ -49,6 +55,15 @@ public abstract class EnemyAI : MonoBehaviour
     }
 
     protected abstract void InitializeEnemy();
+
+    public void SetPatrolPoints()
+    {
+        GameObject[] waypointObjects = GameObject.FindGameObjectsWithTag("Waypoint");
+        foreach (GameObject waypoint in waypointObjects)
+        {
+            patrolPoints.Add(waypoint.transform);
+        }
+    }
 
     protected virtual void Update()
     {
@@ -72,10 +87,8 @@ public abstract class EnemyAI : MonoBehaviour
             {
                 if (!isPatrolling)
                 {
-                    MoveTowardsLastPatrolPoint();
-
-                    //closestWaypoint = FindClosestWaypoint();
-                    //MoveTowardsClosestWaypoint();
+                    closestWaypoint = FindClosestWaypoint();
+                    MoveTowardsClosestWaypoint();
                 }
                 else
                 {
@@ -159,54 +172,39 @@ public abstract class EnemyAI : MonoBehaviour
         }
     }
 
-    protected void MoveTowardsLastPatrolPoint()
+    private Transform FindClosestWaypoint()
     {
-        if (lastPatrolPoint == null) return;
+        Transform closestWaypoint = null;
+        float closestDistance = Mathf.Infinity;
 
-        RotateTowardsPatrolPoint(lastPatrolPoint.position);
-        Vector2 direction = (lastPatrolPoint.position - transform.position).normalized;
-        rb2D.velocity = direction * speed;
-
-        if (Vector3.Distance(transform.position, lastPatrolPoint.position) < 0.1f)
+        foreach (Transform waypoint in patrolPoints)
         {
-            isPatrolling = true;
-            lastPatrolPoint = null;
+            float distance = Vector3.Distance(transform.position, waypoint.position);
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestWaypoint = waypoint;
+            }
         }
+
+        return closestWaypoint;
     }
 
-    //private Transform FindClosestWaypoint()
-    //{
-    //    Transform closestWaypoint = null;
-    //    float closestDistance = Mathf.Infinity;
+    protected void MoveTowardsClosestWaypoint()
+    {
+        if (closestWaypoint == null) return;
 
-    //    foreach (Transform waypoint in patrolPoints)
-    //    {
-    //        float distance = Vector3.Distance(transform.position, waypoint.position);
-    //        if (distance < closestDistance)
-    //        {
-    //            closestDistance = distance;
-    //            closestWaypoint = waypoint;
-    //        }
-    //    }
+        RotateTowardsPatrolPoint(closestWaypoint.position);
+        Vector2 direction = (closestWaypoint.position - transform.position).normalized;
+        rb2D.velocity = direction * speed;
 
-    //    return closestWaypoint;
-    //}
-
-    //protected void MoveTowardsClosestWaypoint()
-    //{
-    //    if (closestWaypoint == null) return;
-
-    //    RotateTowardsWaypoint(closestWaypoint.position);
-    //    Vector2 direction = (closestWaypoint.position - transform.position).normalized;
-    //    rb2D.velocity = direction * speed;
-
-    //    if (Vector3.Distance(transform.position, closestWaypoint.position) < 0.1f)
-    //    {
-    //        isPatrolling = true;
-    //        currentPatrolIndex = patrolPoints.IndexOf(closestWaypoint);
-    //        closestWaypoint = null;
-    //    }
-    //}
+        if (Vector3.Distance(transform.position, closestWaypoint.position) < 0.1f)
+        {
+            isPatrolling = true;
+            currentPatrolIndex = patrolPoints.IndexOf(closestWaypoint);
+            closestWaypoint = null;
+        }
+    }
 
     protected void StopPatrolling()
     {

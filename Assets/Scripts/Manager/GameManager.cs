@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     public GameObject[] spawnPoints;
     public GameObject[] prefabsToSpawn;
 
+    public GameObject[] enemySpawnPoints;
+    public GameObject[] enemyPrefabs;
+
     void Awake()
     {
         if (instance == null)
@@ -27,6 +30,7 @@ public class GameManager : MonoBehaviour
         if (RoomTemplates.instance != null && RoomTemplates.instance.Spawning)
         {
             SpawnPickUps();
+            SpawnEnemies();
             RoomTemplates.instance.Spawning = false;
         }
     }
@@ -43,6 +47,23 @@ public class GameManager : MonoBehaviour
         foreach (GameObject point in pickUpPoints)
         {
             SpawnPrefabAtPoint(prefabsToSpawn[Random.Range(0, prefabsToSpawn.Length)], point.transform.position);
+        }
+    }
+
+    private void SpawnEnemies()
+    {
+        GameObject[] enemyPoints = GameObject.FindGameObjectsWithTag("EnemySpawn");
+
+        foreach (GameObject spawnPoint in enemyPoints)
+        {
+            GameObject enemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
+            GameObject enemy = Instantiate(enemyPrefab, spawnPoint.transform.position, Quaternion.identity);
+
+            EnemyAI enemyAI = enemy.GetComponent<EnemyAI>();
+            if (enemyAI != null)
+            {
+                enemyAI.SetPatrolPoints();
+            }
         }
     }
 
